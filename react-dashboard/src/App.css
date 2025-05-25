@@ -10,26 +10,27 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: #f8f9fb;
   min-height: 100vh;
 }
 
-/* Loading Styles */
+/* Loading animation */
 .loading-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
 }
 
 .spinner {
-  border: 4px solid rgba(255, 255, 255, 0.3);
-  border-radius: 50%;
-  border-top: 4px solid white;
   width: 50px;
   height: 50px;
+  border: 5px solid rgba(255, 255, 255, 0.3);
+  border-top: 5px solid white;
+  border-radius: 50%;
   animation: spin 1s linear infinite;
   margin-bottom: 20px;
 }
@@ -39,19 +40,19 @@ body {
   100% { transform: rotate(360deg); }
 }
 
-/* Login Styles */
+/* Login form */
 .login-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  padding: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
 .login-card {
   background: white;
   padding: 40px;
-  border-radius: 15px;
+  border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   text-align: center;
   max-width: 400px;
@@ -74,7 +75,7 @@ body {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
   border: none;
-  padding: 15px 30px;
+  padding: 12px 30px;
   border-radius: 8px;
   font-size: 1.1rem;
   cursor: pointer;
@@ -87,191 +88,132 @@ body {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* App Styles */
-.App {
-  min-height: 100vh;
-  background: #f5f7fa;
-}
-
-.app-header {
-  background: white;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  padding: 0;
-}
-
-.header-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.app-header h1 {
-  color: #333;
-  font-size: 2rem;
-  font-weight: 600;
-}
-
-.user-info {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.profile-picture {
-  width: 40px;
-  height: 40px;
+/* Custom styles for React components */
+.profile-img {
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  border: 2px solid #667eea;
 }
 
-.username {
-  color: #333;
-  font-weight: 500;
-  font-size: 1.1rem;
-}
-
-.logout-button {
-  background: #dc3545;
+.welcome-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.2s;
 }
 
-.logout-button:hover {
-  background: #c82333;
+.profile-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
 }
 
-/* Main Content */
-.main-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 20px;
-}
-
-.dashboard-container {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
-
-.welcome-section {
-  text-align: center;
-  background: white;
-  padding: 40px;
-  border-radius: 15px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-}
-
-.welcome-section h2 {
-  color: #333;
-  font-size: 3rem;
-  margin-bottom: 15px;
-  font-weight: 700;
-}
-
-.welcome-section p {
-  color: #666;
-  font-size: 1.2rem;
-}
-
-/* Stats Grid */
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
-
-.stat-card {
-  background: white;
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.stat-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-}
-
-.stat-card h3 {
-  color: #666;
-  font-size: 1rem;
-  margin-bottom: 15px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+/* Dashboard specific styles */
+.dashboard-card {
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
 .stat-number {
-  color: #333;
-  font-size: 2.5rem;
-  font-weight: 700;
+  font-size: 2rem;
+  font-weight: bold;
 }
 
-/* User Details */
-.user-details {
-  background: white;
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+.stat-card {
+  min-height: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.user-details h3 {
-  color: #333;
-  font-size: 1.5rem;
-  margin-bottom: 20px;
-  border-bottom: 2px solid #667eea;
-  padding-bottom: 10px;
+.profile-picture {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.username {
+  font-weight: 500;
+}
+
+.main-content {
+  margin-top: 32px;
+}
+
+.welcome-section {
+  margin-bottom: 24px;
+}
+
+.stats-grid {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
 }
 
 .user-detail-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 15px;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
 }
 
-.detail-item {
-  padding: 15px;
-  background: #f8f9fa;
+.user-details {
+  margin-top: 32px;
+}
+
+.dashboard-container {
+  background: #fff;
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.btn {
   border-radius: 8px;
-  border-left: 4px solid #667eea;
 }
 
-.detail-item strong {
-  color: #333;
-  display: block;
-  margin-bottom: 5px;
+.navbar {
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
-/* Responsive Design */
+.navbar-brand {
+  font-weight: bold;
+  color: #2563eb !important;
+}
+
+.nav-link.active {
+  color: #2563eb !important;
+  font-weight: 500;
+}
+
+.table th, .table td {
+  vertical-align: middle;
+}
+
+.pie-chart, .bar-chart {
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+.btn-primary, .btn-success, .btn-info {
+  color: #fff;
+}
+
+/* Responsive design */
 @media (max-width: 768px) {
-  .header-content {
-    flex-direction: column;
-    gap: 20px;
-    text-align: center;
-  }
-  
-  .user-info {
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .welcome-section h2 {
-    font-size: 2rem;
-  }
-  
   .stats-grid {
-    grid-template-columns: 1fr;
+    flex-direction: column;
   }
   
   .user-detail-grid {
     grid-template-columns: 1fr;
+  }
+  
+  .main-content {
+    padding: 20px 15px;
+  }
+  
+  .dashboard-container {
+    padding: 20px;
   }
 }

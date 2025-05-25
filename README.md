@@ -10,15 +10,21 @@ Este proyecto incluye una aplicación completa con autenticación Auth0:
 
 ### Backend (Spring Boot)
 - ✅ **Protección completa de rutas**: Todas las rutas requieren autenticación
-- ✅ **Redirección automática a Auth0**: Si no estás logueado, te redirige automáticamente
-- ✅ **API REST**: Endpoints protegidos
-- ✅ **Interfaz web**: UI con Thymeleaf y Bootstrap
+- ✅ **API REST**: Endpoints protegidos para el frontend React
+- ✅ **Configuración Auth0**: Integración completa con OAuth2
+- ✅ **Dockerización**: Contenedor optimizado para producción
 
 ### Frontend (React)
-- ✅ **Dashboard moderno**: Interfaz responsive con React
-- ✅ **Autenticación Auth0**: Login/logout integrado
-- ✅ **Información del usuario**: Muestra datos del perfil
-- ✅ **Diseño responsive**: Compatible con móviles y desktop
+- ✅ **Aplicación SPA completa**: Vistas HTML convertidas a componentes React
+- ✅ **Routing avanzado**: Navegación entre múltiples vistas (Home, Profile, Dashboard)
+- ✅ **Componentes modulares**: Navbar, LogoutButton y componentes reutilizables
+- ✅ **Autenticación Auth0**: Integración completa con Auth0 React SDK
+- ✅ **Vistas convertidas**:
+  - **Home**: Página principal con tarjetas de navegación y bienvenida
+  - **Profile**: Información detallada del usuario con tabla de atributos
+  - **Dashboard**: Panel financiero completo con estadísticas y transacciones
+- ✅ **Diseño Bootstrap**: Interfaz moderna y responsive
+- ✅ **Protección de rutas**: Redirección automática si no está autenticado
 
 ## 📋 Configuración de Auth0
 
@@ -112,12 +118,20 @@ proyectoNuevo/
 │       └── templates/                      # Plantillas Thymeleaf
 ├── react-dashboard/                        # Aplicación React
 │   ├── src/
-│   │   ├── App.js                         # Componente principal
-│   │   ├── App.css                        # Estilos
+│   │   ├── components/                    # Componentes React
+│   │   │   ├── Home.js                   # Página principal
+│   │   │   ├── Profile.js                # Perfil del usuario
+│   │   │   ├── Dashboard.js              # Dashboard financiero
+│   │   │   ├── Navbar.js                 # Barra de navegación
+│   │   │   ├── LogoutButton.js           # Botón de logout
+│   │   │   └── index.js                  # Exportaciones
+│   │   ├── App.js                         # Componente principal con routing
+│   │   ├── App.css                        # Estilos globales
 │   │   └── index.js                       # Configuración Auth0
 │   ├── public/
+│   │   └── index.html                     # HTML con Bootstrap y FontAwesome
 │   ├── Dockerfile                         # Docker para React
-│   └── package.json
+│   └── package.json                       # Dependencias incluyendo react-router-dom
 ├── Dockerfile                              # Docker para Spring Boot
 ├── docker-compose.yml                     # Orquestación completa
 ├── pom.xml                                # Dependencias Maven
@@ -134,7 +148,11 @@ proyectoNuevo/
 - `/logout` - Cerrar sesión
 
 ### Frontend (React) - http://localhost:3000
-- `/` - Dashboard principal con autenticación Auth0
+- `/` - Redirige a `/home` si está autenticado
+- `/home` - Página principal con tarjetas de navegación
+- `/profile` - Perfil detallado del usuario autenticado
+- `/dashboard` - Panel financiero con estadísticas y transacciones
+- **Protección**: Todas las rutas requieren autenticación Auth0
 
 ## 🔧 Tecnologías Utilizadas
 
@@ -147,8 +165,12 @@ proyectoNuevo/
 
 ### Frontend
 - **React 18**
+- **React Router DOM** (para navegación SPA)
 - **Auth0 React SDK**
+- **Bootstrap 5** (vía CDN)
+- **FontAwesome** (iconos)
 - **CSS3 con Flexbox/Grid**
+- **Componentes modulares y reutilizables**
 - **Responsive Design**
 
 ### DevOps
