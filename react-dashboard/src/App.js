@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import './App.css';
 
 function App() {
+  // Redirección automática si la URL contiene :8080
+  useEffect(() => {
+    if (window.location.host.includes(':8080')) {
+      const cleanUrl = window.location.href.replace(':8080', '');
+      window.location.replace(cleanUrl);
+    }
+  }, []);
+
   const { user, isAuthenticated, isLoading, loginWithRedirect, logout } = useAuth0();
 
   if (isLoading) {

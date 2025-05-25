@@ -12,7 +12,8 @@ root.render(
       domain="dev-6a8gx4jqe8ymcodi.us.auth0.com"
       clientId="LeECmGtmibebqZVG80hUoUUl7ZefIr7a"
       authorizationParams={{
-        redirect_uri: window.location.origin
+        redirect_uri: window.location.origin + '/login/oauth2/code/auth0',
+        scope: 'openid profile email',
       }}
     >
       <App />
