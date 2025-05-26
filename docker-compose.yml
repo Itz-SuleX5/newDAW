@@ -15,18 +15,6 @@ services:
     networks:
       - auth0-network
 
-  # React Frontend
-  auth0-frontend:
-    build: ./react-dashboard
-    ports:
-      - "3000:80"
-    restart: unless-stopped
-    container_name: auth0-react-frontend
-    networks:
-      - auth0-network
-    depends_on:
-      - auth0-backend
-
 networks:
   auth0-network:
     driver: bridge
